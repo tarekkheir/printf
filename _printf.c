@@ -17,10 +17,8 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			if (format[i + 1])
-			{
 				fi = find_index(format[i + 1], index);
 				if (fi != -1)
 				{
@@ -34,7 +32,6 @@ int _printf(const char *format, ...)
 					_putchar(format[i + 1]);
 					result++;
 				}
-			}
 		}
 		else
 		{
