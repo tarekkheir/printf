@@ -45,7 +45,7 @@ int (*find_function(const char s))(va_list)
 		{'s', print_string},
 		{'%', print_perc},
 		{'d', print_decimal},
-		{'i', print_integer},
+		{'i', print_decimal},
 		{'\0', NULL}
 	};
 
@@ -58,50 +58,4 @@ int (*find_function(const char s))(va_list)
 		i++;
 		}
 	return (NULL);
-}
-/**
- *print_integer - print integer
- *@my_list: integer to sprint
- *Return: printed integer
- */
-int print_integer(va_list my_list)
-{
-	int n = va_arg(my_list, int);
-	int num;
-	int res = n % 10;
-	int digit;
-	int base = 1;
-	int i = 1;
-
-	n /= 10;
-	num = n;
-
-	if (res < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		res = -res;
-		i++;
-	}
-
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			base = base * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (base > 0)
-		{
-			digit = num / base;
-			_putchar(digit + '0');
-			num = num - (digit * base);
-			base = base / 10;
-			i++;
-		}
-	}
-	_putchar(res + '0');
-	return (i);
 }
