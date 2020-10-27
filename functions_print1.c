@@ -57,8 +57,8 @@ int print_perc(va_list my_list)
 int print_decimal(va_list my_list)
 {
 	int n;
-	unsigned int tmp, i, result;
-	unsigned int size = 1;
+	unsigned int tmp, i, result, size = 1;
+
 
 	result = 0;
 
@@ -67,7 +67,7 @@ int print_decimal(va_list my_list)
 	if (n < 0)
 	{
 		result = result + _putchar('-');
-		tmp = n * -1;
+		tmp = -(n);
 	}
 	else
 		tmp = n;
@@ -75,13 +75,13 @@ int print_decimal(va_list my_list)
 	i = tmp;
 	while (i > 9)
 	{
-		i = i / 10;
-		size = size * 10;
+		i /= 10;
+		size *= 10;
 	}
 	while (size >= 1)
 	{
-		result = result + _putchar(((tmp / size) % 10) + '0');
-		size = size / 10;
+		result += _putchar(((tmp / size) % 10) + '0');
+		size /= 10;
 	}
 	return (result);
 }

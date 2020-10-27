@@ -17,15 +17,18 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i])
 	{
-		if (format[i + 1] && format[i] == '%')
+		if (format[i] == '%')
 		{
-			fi = find_index(format[i + 1], index);
-
-			if (fi != -1)
+			if (format[i + 1])
 			{
-				func = find_function(format[i + 1]);
-				result += func(my_list);
-				i++;
+				fi = find_index(format[i + 1], index);
+
+				if (fi != -1)
+				{
+					func = find_function(format[i + 1]);
+					result += func(my_list);
+					i++;
+				}
 			}
 			else
 			{
