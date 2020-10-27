@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  *_strlen - length of pointer
  *@s: letter
@@ -6,8 +7,9 @@
  */
 int _strlen(char *s)
 {
-        int size = 0;
-        while (s[size] != '\0')
+	int size = 0;
+
+	while (s[size] != '\0')
 		size++;
 	return (size);
 }
@@ -19,41 +21,47 @@ int _strlen(char *s)
  */
 int find_index(char str, const char *index)
 {
-        int i = 0;
+	int i = 0;
 
-        while (index[i])
-        {
-                if (index[i] == str)
-                        return (i);
-                i++;
-        }
-        return (-1);
+	while (index[i])
+	{
+		if (index[i] == str)
+			return (i);
+		i++;
+	}
+	return (-1);
 }
-int (*find_function(const char s))(va_list)                                                                                                                                 {
-        int i = 0;
+/**
+ *find_function - find the good function
+ *@s: caractere
+ *Return: integer
+ */
+int (*find_function(const char s))(va_list)
+{
+	int i = 0;
 
-        find_t f[] = {
-                {'c', print_caractere},
-                {'s', print_string},
-                {'%', print_perc},
-                {'d', print_decimal},
-                {'i', print_integer},
-                {'\0', NULL}
-        };
+	find_t f[] = {
+		{'c', print_caractere},
+		{'s', print_string},
+		{'%', print_perc},
+		{'d', print_decimal},
+		{'i', print_integer},
+		{'\0', NULL}
+	};
 
-        while (f[i].t)
-        {
-                if (f[i].t == s)
-                {
-                        return (f[i].f);
-                }
-                i++;
-        }
-        return (NULL);
+	while (f[i].t)
+	{
+		if (f[i].t == s)
+		{
+			return (f[i].f);
+		}
+		i++;
+		}
+	return (NULL);
 }
 /**
  *print_integer - print integer
- *@ap: integer to sprint
+ *@my_list: integer to sprint
  *Return: printed integer
  */
 int print_integer(va_list my_list)
