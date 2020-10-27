@@ -6,9 +6,9 @@
  *@ap: decimal to sprint
  *Return: printed decimal
  */
-int print_decimal(va_list ap)
+int print_decimal(va_list my_list)
 {
-	int n = va_arg(ap, int);
+	int n = va_arg(my_list, int);
 	int num;
 	int res = n % 10;
 	int digit;
@@ -53,9 +53,9 @@ int print_decimal(va_list ap)
  *@ap: integer to sprint
  *Return: printed integer
  */
-int print_integer(va_list ap)
+int print_integer(va_list my_list)
 {
-	int n = va_arg(ap, int);
+	int n = va_arg(mylist, int);
 	int num;
 	int res = n % 10;
 	int digit;
