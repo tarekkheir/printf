@@ -1,0 +1,46 @@
+.TH man_3_printf "27 October 2020" "0.01"
+
+.SH NAME
+.B _printf
+
+.SH SYNOPSIS
+B.#include \^"holberton.h\^"
+
+B._printf(const char *format, ...)
+
+.SH DESCRIPTION
+A similar implementation of function printf()
+
+B.Differences with the original function
+
+We dont handle the flag characters
+We dont handle field width
+We dont handle precision
+We dont handle the length modifiers
+
+.SH OPTIONS
+.br
+.B
+%c - Prints a character
+.br
+.B
+%s - Prints a string
+.br
+.B
+ %d - Prints a number in decimal
+.br
+.B
+%i - Prints a number as integer
+
+.SH EXAMPLE
+.B To print a decimal, a integer, a caractere and a string.
+
+B.#include \^"holberton.h\^"
+
+B._printf("%d, %i, %c, %s", 45, 23, 'a', "String");
+
+.SH RETURN
+_printf() return the length of the string that he print.
+
+.SH AUTHOR
+Fares Sassi / Tarek Kheir
