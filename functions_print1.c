@@ -24,19 +24,8 @@ int print_caractere(va_list my_list)
 /**
  *print_string - print caractere
  *@my_list: string to print
- *Return: void
+ *Return: integer
  */
-int puts_string(char *string)
-{
-	int i = 0;
-
-	while (string[i])
-	{
-		_putchar(string[i]);
-		i++;
-	}
-	return (_strlen(string));
-}
 int print_string(va_list my_list)
 {
 	char *string = va_arg(my_list, char *);

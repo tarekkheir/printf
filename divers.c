@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  *_strlen - length of pointer
  *@s: letter
@@ -12,6 +11,22 @@ int _strlen(char *s)
 	while (s[size] != '\0')
 		size++;
 	return (size);
+}
+/**
+ *puts_string - print caractere
+ *@string: string to print
+ *Return: integer
+ */
+int puts_string(char *string)
+{
+	int i = 0;
+
+	while (string[i])
+	{
+		_putchar(string[i]);
+		i++;
+	}
+	return (_strlen(string));
 }
 /**
  *find_index - find the index

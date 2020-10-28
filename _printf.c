@@ -13,26 +13,26 @@ int _printf(const char *format, ...)
 	char index[6] = {'c', 's', 'd', 'i', '%', '\0'};
 
 	va_start(my_list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == 0))
+	if (format == NULL || (format[i] == '%' && format[i + 1] == 0))
 		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-				fi = find_index(format[i + 1], index);
-				if (fi != -1)
-				{
-					func = find_function(format[i + 1]);
-					result += func(my_list);
-					i++;
-				}
-				else
-				{
-					result++;
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					i++;
-				}
+			fi = find_index(format[i + 1], index);
+			if (fi != -1)
+			{
+				func = find_function(format[i + 1]);
+				result += func(my_list);
+				i++;
+			}
+			else
+			{
+				result++;
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				i++;
+			}
 		}
 		else
 		{
