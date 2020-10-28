@@ -28,9 +28,10 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
+					result++;
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-					result++;
+					i++;
 				}
 		}
 		else

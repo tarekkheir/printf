@@ -26,9 +26,8 @@ int print_caractere(va_list my_list)
  *@my_list: string to print
  *Return: void
  */
-int print_string(va_list my_list)
+int puts_string(char *string)
 {
-	char *string = va_arg(my_list, char *);
 	int i = 0;
 
 	while (string[i])
@@ -36,6 +35,20 @@ int print_string(va_list my_list)
 		_putchar(string[i]);
 		i++;
 	}
+	return (_strlen(string));
+}
+int print_string(va_list my_list)
+{
+	char *string = va_arg(my_list, char *);
+	char *str;
+
+	if (string == NULL)
+	{
+		str = "(null)";
+		puts_string(str);
+		return (_strlen(str));
+	}
+	puts_string(string);
 	return (_strlen(string));
 }
 /**
