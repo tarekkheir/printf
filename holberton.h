@@ -29,6 +29,6 @@ int _putchar(char c);
 int (*find_function(const char s))(va_list);
 int print_perc(va_list my_list);
 int print_decimal(va_list my_list);
-int print_integer(va_list my_list);
+int puts_string(char *string);
 
 #endif
