@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int i = 0, fi;
 	int result = 0;
 	int (*func)(va_list);
-	char index[6] = {'c', 's', 'd', 'i', '%', '\0'};
+	char index[8] = {'c', 's', 'd', 'i', 'u', 'S', '%', '\0'};
 
 	va_start(my_list, format);
 	if (format == NULL || (format[i] == '%' && format[i + 1] == 0))
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				result++;
+				result += 2;
 				_putchar(format[i]);
 				_putchar(format[i + 1]);
 				i++;
