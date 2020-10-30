@@ -13,22 +13,6 @@ int _strlen(char *s)
 	return (size);
 }
 /**
- *puts_string - print caractere
- *@string: string to print
- *Return: integer
- */
-int puts_string(char *string)
-{
-	int i = 0;
-
-	while (string[i])
-	{
-		_putchar(string[i]);
-		i++;
-	}
-	return (_strlen(string));
-}
-/**
  *find_index - find the index
  *@str: string
  *@index: caractere
@@ -61,6 +45,9 @@ int (*find_function(const char s))(va_list)
 		{'%', print_perc},
 		{'d', print_decimal},
 		{'i', print_decimal},
+		{'u', print_decimal},
+		{'S', print_string},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 
