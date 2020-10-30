@@ -94,7 +94,6 @@ int print_binary(va_list my_list)
 		tmp = tmp * 10;
 		ret++;
 	}
-	printf("result : %d\n", result);
 	puts_number(result);
 	return (ret);
 }
